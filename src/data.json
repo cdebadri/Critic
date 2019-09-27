@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "eventName": "Trek",
+        "clientName": "Good Trips Inc.",
+        "date": "01/02/19",
+        "venue": "Kolkata"
+    },
+    {
+        "id": 2,
+        "eventName": "Heritage Tours",
+        "clientName": "Memory Lane Inc.",
+        "date": "02/03/18",
+        "venue": "Bangalore"
+    }, 
+    {
+        "id": 3,
+        "eventName": "Wine Tour",
+        "clientName": "Sula Inc.",
+        "date": "03/02/19",
+        "venue": "Bangalore"
+    }
+]
