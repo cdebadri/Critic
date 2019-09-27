@@ -2,9 +2,7 @@ import {
     LOGIN
 } from '../types'
 
-export const loginAction = (accountType, username, password) => ({
+export const loginAction = (username) => ({
     type: LOGIN,
-    accountType,
-    username,
-    password
+    username
 })

@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 
-export default class Login extends Component {
+class Login extends Component {
 
     state = {
         accountType: '',
-            username: '',
-            password: ''
+        username: '',
+        password: ''
+    }
+
+    loginSubmit = (event) => {
+        event.preventDefault();
+        console.log('username',this.username);
+        this.props.sendLogin(this.username);
     }
 
     render() {
         return (<div>
-            <div className={'col-5 offset-1 card'}>
                 <form>
                     <div className={'form-group'}>
                         <label>ACCOUNT TYPE:</label>
@@ -32,10 +38,15 @@ export default class Login extends Component {
                     </div>
 
                     <div className={'form-group'}>
-                        <button onClick={()=>{this.props.sendLogin(this.username, this.password)}}>SIGN IN</button>
+                        <button onClick={this.loginSubmit}>SIGN IN</button>
                     </div>
                 </form>
-            </div>
         </div>);
     }
 }
+
+Login.propTypes = {
+    sendLogin: PropTypes.func.isRequired
+}
+
+export default Login;
