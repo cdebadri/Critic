@@ -1,7 +1,8 @@
 import React from 'react';
-import HomePage from '../pages/HomePage';
+import EventCard from '../components/EventCard';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
 EventContainer.propTypes = {
     userName: PropTypes.string.isRequired,
@@ -9,6 +10,7 @@ EventContainer.propTypes = {
     accountType: PropTypes.string.isRequired,
     events: PropTypes.arrayOf(
         PropTypes.shape({
+        id: PropTypes.number.isRequired,
         eventName: PropTypes.string.isRequired,
         clientName: PropTypes.string.isRequired,
         date: PropTypes.string.isRequired,
@@ -22,7 +24,14 @@ class EventContainer extends React.Component {
     }
 
     render() {
-        <HomePage {...this.props} />
+        const {events} = this.props;
+        <div className="row">
+            {events.map(event => (
+                <div className="col-sm-12 col-md-6 offset-md-3 col-lg-6 offset-lg-3" key={event.id}>
+                    <EventCard {...event} />
+                </div>
+            ))}
+        </div>
     }
 
 }
@@ -34,4 +43,4 @@ const mapStateToProps = state => ({
     events: state.events
 })
 
-export default connect(mapStateToProps)(HomePage);
+export default connect(mapStateToProps)(EventContainer);
