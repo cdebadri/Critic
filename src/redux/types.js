@@ -7,3 +7,14 @@ export const GET_ALL_EVENTS = 'GET_ALL_EVENTS';
 export const LOAD_EVENTS = 'LOAD_EVENTS';
 export const GET_USER_CREDENTIALS = 'GET_USER_CREDENTIALS';
 export const SELECT_ACCOUNT_TYPE = 'SELECT_ACCOUNT_TYPE';
+export const GET_QUESTIONS = 'GET_QUESTIONS';
+export const SUBMIT_SURVEY = 'SUBMIT_SURVEY;'
+
+//client actions
+export const ADD_QUESTION = 'ADD_QUESTION';
+export const REMOVE_QUESTION = 'REMOVE_QUESTION';
+export const MODIFY_QUESTION = 'MODIFY_QUESTION';
+export const ADD_OPTION = 'ADD_OPTION';
+export const REMOVE_OPTION = 'REMOVE_OPTION';
+export const MODIFY_OPTION = 'MODIFY_OPTION';
+export const CREATE_SURVEY = 'CREATE_SURVEY';
