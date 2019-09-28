@@ -1,7 +1,8 @@
 import {
     ADD_QUESTION,
     REMOVE_QUESTION,
-    MODIFY_QUESTION
+    MODIFY_QUESTION,
+    GET_CLIENT_CREDENTIALS
 } from '../types';
 
 export const addQuestionAction = payload => ({
@@ -16,5 +17,10 @@ export const removeQuestionAction = payload => ({
 
 export const modifyQuestionAction = payload => ({
     type: MODIFY_QUESTION,
+    payload
+})
+
+export const getClientCredentialsAction = payload => ({
+    type: GET_CLIENT_CREDENTIALS,
     payload
 })

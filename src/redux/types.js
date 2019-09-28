@@ -15,8 +15,8 @@ export const SIGNUP = 'SIGNUP';
 export const SIGNUP_CALL = 'SIGNUP_CALL';
 
 export const GET_QUESTIONS = 'GET_QUESTIONS';
+export const SUBMIT_SURVEY = 'SUBMIT_SURVEY';
 export const LOAD_QUESTIONS = 'LOAD_QUESTIONS';
-export const SUBMIT_SURVEY = 'SUBMIT_SURVEY;'
 
 //client actions
 export const ADD_QUESTION = 'ADD_QUESTION';
@@ -26,3 +26,4 @@ export const ADD_OPTION = 'ADD_OPTION';
 export const REMOVE_OPTION = 'REMOVE_OPTION';
 export const MODIFY_OPTION = 'MODIFY_OPTION';
 export const CREATE_SURVEY = 'CREATE_SURVEY';
+export const GET_CLIENT_CREDENTIALS = 'GET_CLIENT_CREDENTIALS';
