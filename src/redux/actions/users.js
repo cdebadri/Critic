@@ -6,7 +6,10 @@ import {
     GET_ALL_EVENTS,
     GET_USER_CREDENTIALS,
     SELECT_ACCOUNT_TYPE,
-    LOAD_EVENTS
+    LOAD_EVENTS,
+    GET_QUESTIONS,
+    LOAD_QUESTIONS,
+    SUBMIT_SURVEY
 } from '../types'
 
 export const updateResponsesAction = (payload) => ({
@@ -35,5 +38,24 @@ export const getUserCredentials = payload => ({
 
 export const selectAccountType = payload => ({
     type: SELECT_ACCOUNT_TYPE,
+    payload
+})
+
+export const getQuestionListAction = () => ({
+    type: GET_QUESTIONS
+})
+
+export const loadQuestionListAction = (payload) => ({
+    type: LOAD_QUESTIONS,
+    payload
+})
+
+export const selectEventAction = payload => ({
+    type: SELECT_EVENT,
+    payload
+})
+
+export const submitSurveyAction = payload => ({
+    type: SUBMIT_SURVEY,
     payload
 })
