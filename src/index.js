@@ -8,11 +8,11 @@ import store from './redux/store';
 import Login from './containers/LoginContainer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SignUp from './containers/signUpContainer';
-import Analytics from './components/analytics'
+import PieChartComp from './components/barChart';
 
 ReactDOM.render(
     <Provider store={store}>
-        <Analytics />
+        <PieChartComp />
     </Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

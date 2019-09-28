@@ -15,6 +15,7 @@ export const SIGNUP = 'SIGNUP';
 export const SIGNUP_CALL = 'SIGNUP_CALL';
 
 export const GET_QUESTIONS = 'GET_QUESTIONS';
+export const LOAD_QUESTIONS = 'LOAD_QUESTIONS';
 export const SUBMIT_SURVEY = 'SUBMIT_SURVEY;'
 
 //client actions
