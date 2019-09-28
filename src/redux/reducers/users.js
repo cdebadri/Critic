@@ -7,14 +7,14 @@ import {
 } from '../types'
 
 const initState = {
-    events = [],
-    userName = '',
-    email = '',
+    events: [],
+    userName: '',
+    email: '',
     accountType: '',
-    selectedEventId = 0
+    selectedEventId: 0
 }
 
-export default UserReducer = (state = initState, action) => {
+const UserReducer = (state = initState, action) => {
     switch(action.type) {
         case GET_ALL_EVENTS:
             return state;
@@ -35,3 +35,5 @@ export default UserReducer = (state = initState, action) => {
             return state;
     }
 } 
+
+export default UserReducer;

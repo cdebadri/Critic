@@ -9,3 +9,6 @@ export const GET_USER_CREDENTIALS = 'GET_USER_CREDENTIALS';
 export const SELECT_ACCOUNT_TYPE = 'SELECT_ACCOUNT_TYPE';
 
 export const LOGIN = 'LOGIN';
+export const LOGIN_CALL = 'LOGIN_CALL';
+export const SIGNUP = 'SIGNUP';
+export const SIGNUP_CALL = 'SIGNUP_CALL';

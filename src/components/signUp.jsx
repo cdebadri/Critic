@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Login extends Component {
+class SignUp extends Component {
 
     state = {
         accountType: '',
@@ -8,10 +8,10 @@ class Login extends Component {
         password: ''
     }
 
-    loginSubmit = (event) => {
+    signUpSubmit = (event) => {
         event.preventDefault();
         console.log('username',this.username);
-        this.props.sendLogin(this.accountType, this.username, this.password);
+        this.props.sendSignUp(this.accountType, this.username, this.password);
     }
 
     render() {
@@ -41,7 +41,7 @@ class Login extends Component {
 
                     <div className={'form-group'}>
                         <div className={'text-center'}>
-                        <button className={'btn btn-primary'} onClick={this.loginSubmit}>SIGN IN</button>
+                        <button className={'btn btn-success'} onClick={this.signUpSubmit}>SIGN UP</button>
                         </div>
                     </div>
                 </form>
@@ -52,4 +52,4 @@ class Login extends Component {
 }
 
 
-export default Login;
+export default SignUp;

@@ -1,17 +1,17 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import {
-    LOGIN,
-    LOGIN_CALL
+    SIGNUP,
+    SIGNUP_CALL
 } from '../types';
 
-function* loginSaga(action) {
+function* signUpSaga(action) {
     try {
-        yield console.log("login saga");
+        console.log("inside sign up saga");
         // const events = yield call();
         yield put({ 
-            type: LOGIN_CALL, 
+            type: SIGNUP_CALL, 
             username: action.username,
-            accountType: action.accountType 
+            accountType: action.accountType
         })
     } catch (error) {
         //an action for handling failure
@@ -19,5 +19,5 @@ function* loginSaga(action) {
 }
 
 export default function* watcher() {
-    yield takeLatest(LOGIN, loginSaga);
+    yield takeLatest(SIGNUP, signUpSaga);
 }

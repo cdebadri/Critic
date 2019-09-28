@@ -1,8 +1,18 @@
 import {
-    LOGIN
+    LOGIN,
+    SIGNUP
 } from '../types'
 
-export const loginAction = (username) => ({
+export const loginAction = (accountType, username, password) => ({
     type: LOGIN,
-    username
+    accountType,
+    username,
+    password
+})
+
+export const signUpAction = (accountType, username, password) => ({
+    type: SIGNUP,
+    accountType,
+    username,
+    password
 })
