@@ -7,6 +7,13 @@ export const GET_ALL_EVENTS = 'GET_ALL_EVENTS';
 export const LOAD_EVENTS = 'LOAD_EVENTS';
 export const GET_USER_CREDENTIALS = 'GET_USER_CREDENTIALS';
 export const SELECT_ACCOUNT_TYPE = 'SELECT_ACCOUNT_TYPE';
+
+//Login and signup actions
+export const LOGIN = 'LOGIN';
+export const LOGIN_CALL = 'LOGIN_CALL';
+export const SIGNUP = 'SIGNUP';
+export const SIGNUP_CALL = 'SIGNUP_CALL';
+
 export const GET_QUESTIONS = 'GET_QUESTIONS';
 export const SUBMIT_SURVEY = 'SUBMIT_SURVEY';
 export const LOAD_QUESTIONS = 'LOAD_QUESTIONS';
