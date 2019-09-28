@@ -31,12 +31,12 @@ export const loadEventsAction = (payload) => ({
     payload
 })
 
-export const getUserCredentials = payload => ({
+export const getUserCredentialsAction = payload => ({
     type: GET_USER_CREDENTIALS,
     payload
 })
 
-export const selectAccountType = payload => ({
+export const selectAccountTypeAction = payload => ({
     type: SELECT_ACCOUNT_TYPE,
     payload
 })
