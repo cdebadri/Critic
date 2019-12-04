@@ -101,6 +101,7 @@ class SurveyFormContainer extends React.Component {
                             questionObject={questionList[currentPos]}
                             saveResponse={this.saveResponse}
                             clearResponse={this.clearResponse}
+                            noActions={false}
                         />
                     </div>
                     <div className="col-sm-2 col-md-2 col-lg-2">

@@ -3,9 +3,9 @@ import EventCard from '../components/EventCard';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
 import { selectEventAction, getAlleventsAction } from '../redux/actions/users';
+import('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
 EventContainer.propTypes = {
     userName: PropTypes.string.isRequired,
@@ -13,7 +13,7 @@ EventContainer.propTypes = {
     accountType: PropTypes.string.isRequired,
     events: PropTypes.arrayOf(
         PropTypes.shape({
-            clientName: PropTypes.string,
+            client: PropTypes.string,
             date: PropTypes.string,
             venue: PropTypes.string
         })).isRequired
@@ -21,24 +21,27 @@ EventContainer.propTypes = {
 
 class EventContainer extends React.Component {
     componentDidMount() {
+        const { getAllEvents } = this.props;
         getAllEvents();
     }
 
     onSelectEvent = (id) => {
-        const { history } = this.props;
+        const { history, selectEvent } = this.props;
         selectEvent(id);
         history.push(`/surveyform/${id}`);
     }
 
     render() {
         const { events } = this.props;
-        <div className="row">
-            {events.map(event => (
-                <div className="col-sm-12 col-md-6 offset-md-3 col-lg-6 offset-lg-3" key={event.id}>
-                    <EventCard event={event} onSelectEvent={this.onSelectEvent} />
-                </div>
-            ))}
-        </div>
+        return (
+            <div className="row">
+                {events.map(event => (
+                    <div className="col-sm-12 col-md-6 offset-md-3 col-lg-6 offset-lg-3" key={event.id}>
+                        <EventCard event={event} onSelectEvent={this.onSelectEvent} />
+                    </div>
+                ))}
+            </div>
+        )
     }
 
 }

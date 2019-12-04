@@ -1,18 +1,18 @@
-import('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
+import React from 'react'
 import PropTypes from 'prop-types';
+
+import('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
 EventCard.propTypes = {
     event: PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        eventName: PropTypes.string.isRequired,
-        clientName: PropTypes.string.isRequired,
+        client: PropTypes.string.isRequired,
         date: PropTypes.string.isRequired,
         venue: PropTypes.string.isRequired,
     }).isRequired,
     onSelectEvent: PropTypes.func.isRequired
 }
 
-export const EventCard = (props) => {
+const EventCard = (props) => {
     const { event, onSelectEvent } = props;
     return (
         <div className="card">
@@ -20,8 +20,7 @@ export const EventCard = (props) => {
             <div className="card-body">
                 <div className="row">
                     <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                        <div className="text-monospace">{event.eventName}</div>
-                        <div className="text-monospace">{event.clientName}</div>
+                        <div className="text-monospace">{event.client}</div>
                         <div className="text-monospace">{event.date}</div>
                         <div className="text-monospace">{event.venue}</div>
                     </div>
@@ -31,3 +30,5 @@ export const EventCard = (props) => {
         </div>
     )
 }
+
+export default EventCard;

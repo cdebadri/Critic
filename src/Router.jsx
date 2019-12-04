@@ -1,11 +1,15 @@
+import React from 'react';
 import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
-// import EventPage from './containers/EventContainer';
+import EventPage from './containers/EventContainer';
+import SurveyFormPage from './containers/SurveyFormContainer' 
 
-export default Routing = (
+const Routing = (
     <Router>
         <Switch>
-            <Route exact path="/users" component={EventPage} /> 
-             <Route path="/users/surveyform/:id" component={} />
+            <Route exact path="/" component={EventPage} /> 
+             <Route path="/:client" component={SurveyFormPage} />
         </Switch>
     </Router>
 )
+
+export default Routing;

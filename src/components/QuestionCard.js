@@ -1,5 +1,7 @@
-import('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
+import React from 'react'
 import PropTypes from 'prop-types';
+
+import('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
 QuestionCard.propTypes = {
     questionObject: PropTypes.shape({
@@ -10,11 +12,14 @@ QuestionCard.propTypes = {
         option4: PropTypes.string.isRequired,
     }),
     saveResponse: PropTypes.func.isRequired,
-    clearResponse: PropTypes.func.isRequired
+    clearResponse: PropTypes.func.isRequired,
+    noActions: PropTypes.bool.isRequired,
+    removeQuestion: PropTypes.func,
+    modifyQuestion: PropTypes.func
 }
 
 const QuestionCard = (props) => {
-    const { questionObject, saveResponse, clearResponse } = props;
+    const { questionObject, saveResponse, clearResponse, noActions, removeQuestion, modifyQuestion } = props;
     return (
         <div className="card">
             <div className="card-title">
@@ -22,36 +27,55 @@ const QuestionCard = (props) => {
             </div>
             <div className="card-body">
                 <div className="form-check">
-                    <input name={questionObject.question} id="option1" className="form-check-input" value="1" />
+                    <input disabled={noActions} name={questionObject.question} id="option1" className="form-check-input" value="1" />
                     <label className="form-check-label" htmlFor="option1">{questionObject.option1}</label>
                 </div>
                 <div className="form-check">
-                    <input name={questionObject.question} id="option2" className="form-check-input" value="2" />
+                    <input disabled={noActions} name={questionObject.question} id="option2" className="form-check-input" value="2" />
                     <label className="form-check-label" htmlFor="option2">{questionObject.option2}</label>
                 </div>
                 <div className="form-check">
-                    <input name={questionObject.question} id="option3" className="form-check-input" value="3" />
+                    <input disabled={noActions} name={questionObject.question} id="option3" className="form-check-input" value="3" />
                     <label className="form-check-label" htmlFor="option3">{questionObject.option3}</label>
                 </div>
                 <div className="form-check">
-                    <input name={questionObject.question} id="option4" className="form-check-input" value="4" />
+                    <input disabled={noActions} name={questionObject.question} id="option4" className="form-check-input" value="4" />
                     <label className="form-check-label" htmlFor="option4">{questionObject.option4}</label>
                 </div>
-                <div>
-                    <button 
-                        onClick={() => saveResponse(questionObject.question.value)} 
-                        type="button" className="btn btn-primary float-left"
-                    >
-                        Save Response
-                    </button>
-                    <button
-                        onClick={() => clearResponse(questionObject.question.value)}
-                        type="button" className="btn btn-primary float-right"
-                    >
-                        Clear Response
-                    </button>
-                </div>
-                <button type="button" className="btn btn-primary float-left"></button>
+                {
+                    (!noActions) &&
+                    <div>
+                        <button
+                            onClick={() => saveResponse(questionObject.question.value)}
+                            type="button" className="btn btn-primary float-left"
+                        >
+                            Save Response
+                        </button>
+                        <button
+                            onClick={() => clearResponse(questionObject.question.value)}
+                            type="button" className="btn btn-primary float-right"
+                        >
+                            Clear Response
+                        </button>
+                    </div>
+                }
+                {
+                    (noActions) &&
+                    <div>
+                        <button
+                            onClick={() => removeQuestion(questionObject.question)}
+                            type="button" className="btn btn-primary float-left"
+                        >
+                            Modify
+                        </button>
+                        <button
+                            onClick={() => modifyQuestion(questionObject.question)}
+                            type="button" className="btn btn-primary float-right"
+                        >
+                            Remove
+                        </button>
+                    </div>
+                }
             </div>
         </div>
     )

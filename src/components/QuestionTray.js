@@ -1,5 +1,7 @@
-import('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
+import React from 'react';
 import PropTypes from 'prop-types';
+
+import('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
 QuestionTray.propTypes = {
     numberOfQuestions: PropTypes.number.isRequired,
@@ -7,7 +9,7 @@ QuestionTray.propTypes = {
 }
 
 const QuestionTray = (props) => {
-    const { numberOfQuestions } = props;
+    const { numberOfQuestions, goToQuestion } = props;
     const questionNumbers = [];
     for(let i = 1; i <= numberOfQuestions; i++) questionNumbers.push(i);
 

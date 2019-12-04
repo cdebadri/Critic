@@ -8,12 +8,13 @@ import {
     GET_USER_CREDENTIALS,
     SELECT_ACCOUNT_TYPE
 } from '../types';
+import api from '../../api/users';
 
 const getSelectedEvent = state => state.selectedEventId
 
 function* getAllEvents() {
     try {
-        const events = yield call();
+        const events = yield call(api.getClient);
         yield put({ type: LOAD_EVENTS, events })
     } catch (error) {
         //an action for handling failure
